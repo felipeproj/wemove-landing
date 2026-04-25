@@ -1,10 +1,1 @@
-{
-  "redirects": [
-    {
-      "source": "/",
-      "has": [{ "type": "host", "value": "www.wemoveapp.co" }],
-      "destination": "https://wemoveapp.co",
-      "permanent": true
-    }
-  ]
-}
+{}
