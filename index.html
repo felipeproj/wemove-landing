@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
+    <script defer data-domain="wemoveapp.co" src="https://plausible.io/js/script.js"></script>
 
     <style>
         *,
@@ -80,7 +81,35 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 24px;
             height: 64px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: auto;
+            margin-right: 16px;
+        }
+
+        .nav-link {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ink-2);
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            transition: color 0.15s, background 0.15s;
+        }
+
+        .nav-link:hover {
+            color: var(--blue);
+            background: rgba(59, 130, 246, 0.06);
+        }
+
+        @media (max-width: 480px) {
+            .nav-links { display: none; }
         }
 
         .logo {
@@ -756,6 +785,196 @@
             color: var(--blue);
         }
 
+        /* ── PRICING ── */
+        .pricing {
+            padding: 96px 0;
+            background: var(--white);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .pricing-header .section-sub {
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            align-items: start;
+        }
+
+        .plan-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 32px 28px;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+        }
+
+        .plan-card.featured {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 1px var(--blue), 0 8px 32px rgba(59, 130, 246, 0.15);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: -13px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--grad);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 100px;
+            white-space: nowrap;
+        }
+
+        .plan-name {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--ink-3);
+            margin-bottom: 12px;
+        }
+
+        .plan-price {
+            margin-bottom: 6px;
+        }
+
+        .plan-price .amount {
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            color: var(--ink);
+            line-height: 1;
+        }
+
+        .plan-price .currency {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--ink-2);
+            vertical-align: super;
+            margin-right: 2px;
+        }
+
+        .plan-price .period {
+            font-size: 13px;
+            color: var(--ink-3);
+            margin-left: 4px;
+        }
+
+        .plan-desc {
+            font-size: 13px;
+            color: var(--ink-3);
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .plan-divider {
+            height: 1px;
+            background: var(--border);
+            margin-bottom: 20px;
+        }
+
+        .plan-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+            margin-bottom: 28px;
+        }
+
+        .plan-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--ink-2);
+            line-height: 1.4;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            width: 18px;
+            height: 18px;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 800;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .plan-features li.muted {
+            color: var(--ink-3);
+        }
+
+        .plan-features li.muted::before {
+            content: '–';
+            background: var(--surface);
+            color: var(--ink-3);
+        }
+
+        .btn-plan {
+            display: block;
+            width: 100%;
+            padding: 13px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+        }
+
+        .btn-plan.outline {
+            border: 1.5px solid var(--border);
+            color: var(--ink-2);
+            background: #fff;
+        }
+
+        .btn-plan.outline:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        .btn-plan.solid {
+            background: var(--grad);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-plan.solid:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
             .hero {
@@ -813,9 +1032,20 @@
     <nav>
         <div class="container nav-inner">
             <a href="#" class="logo">
-                <div class="logo-mark">📦</div>
+                <div class="logo-mark">
+                    <svg width="20" height="20" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M106 202 L200 100 L294 202 Z" fill="white"/>
+                        <rect x="130" y="200" width="140" height="112" fill="white"/>
+                        <rect x="174" y="244" width="52" height="68" rx="6" fill="rgba(79,70,229,0.7)"/>
+                        <path d="M304 165 L348 165 M326 147 L348 165 L326 183" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                </div>
                 <span class="logo-name">WeMove</span>
             </a>
+            <nav class="nav-links">
+                <a href="#como-funciona" class="nav-link">Como funciona</a>
+                <a href="#pricing" class="nav-link">Preços</a>
+            </nav>
             <a href="https://app.wemoveapp.co" class="nav-cta">
                 Começar grátis
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
@@ -935,7 +1165,7 @@
     </div>
 
     <!-- HOW IT WORKS -->
-    <section class="section">
+    <section class="section" id="como-funciona">
         <div class="container">
             <div class="how-grid">
 
@@ -1128,6 +1358,83 @@
         </div>
     </section>
 
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+
+            <div class="pricing-header">
+                <span class="section-tag">Planos</span>
+                <h2 class="section-title">Simples e sem surpresa</h2>
+                <p class="section-sub">
+                    Comece grátis. Quando precisar de mais, um pagamento único libera tudo — sem assinatura, sem
+                    recorrência.
+                </p>
+            </div>
+
+            <div class="pricing-grid">
+
+                <!-- Grátis -->
+                <div class="plan-card">
+                    <div class="plan-name">Grátis</div>
+                    <div class="plan-price">
+                        <span class="amount">R$&nbsp;0</span>
+                    </div>
+                    <p class="plan-desc">Para experimentar e sentir o produto.</p>
+                    <div class="plan-divider"></div>
+                    <ul class="plan-features">
+                        <li>1 lista de mudança</li>
+                        <li>Até 30 itens</li>
+                        <li>Geração por IA (1×)</li>
+                        <li>Compartilhar para visualização</li>
+                        <li class="muted">Itens ilimitados</li>
+                        <li class="muted">Re-geração por IA</li>
+                        <li class="muted">Colaboradores com edição</li>
+                    </ul>
+                    <a href="https://app.wemoveapp.co" class="btn-plan outline">Começar grátis</a>
+                </div>
+
+                <!-- Essencial -->
+                <div class="plan-card featured">
+                    <div class="plan-badge">Mais popular</div>
+                    <div class="plan-name">Essencial</div>
+                    <div class="plan-price">
+                        <span class="currency">R$</span><span class="amount">19</span><span class="period">,90 único</span>
+                    </div>
+                    <p class="plan-desc">Pagamento único. Sem assinatura. Válido por 6 meses.</p>
+                    <div class="plan-divider"></div>
+                    <ul class="plan-features">
+                        <li>Listas ilimitadas</li>
+                        <li>Itens ilimitados</li>
+                        <li>Re-geração por IA à vontade</li>
+                        <li>Compartilhar com edição (3 colaboradores)</li>
+                        <li>Recomendações de produtos com links</li>
+                        <li>Histórico de gastos e orçamento</li>
+                    </ul>
+                    <a href="https://app.wemoveapp.co" class="btn-plan solid">Quero o Essencial</a>
+                </div>
+
+                <!-- Família -->
+                <div class="plan-card">
+                    <div class="plan-name">Família</div>
+                    <div class="plan-price">
+                        <span class="currency">R$</span><span class="amount">29</span><span class="period">,90 único</span>
+                    </div>
+                    <p class="plan-desc">Pagamento único. Sem assinatura. Válido por 12 meses.</p>
+                    <div class="plan-divider"></div>
+                    <ul class="plan-features">
+                        <li>Tudo do plano Essencial</li>
+                        <li>Até 10 colaboradores com edição</li>
+                        <li>Múltiplas listas simultâneas</li>
+                        <li>Comentários por item</li>
+                        <li>Validade de 12 meses</li>
+                    </ul>
+                    <a href="https://app.wemoveapp.co" class="btn-plan outline">Quero o Família</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- CTA FINAL -->
     <section class="cta-section">
         <div class="container">
@@ -1154,10 +1461,17 @@
         <div class="container">
             <div class="footer-inner">
                 <a href="#" class="logo" style="text-decoration:none;">
-                    <div class="logo-mark" style="width:28px;height:28px;font-size:14px;border-radius:8px;">📦</div>
+                    <div class="logo-mark" style="width:28px;height:28px;border-radius:8px;">
+                        <svg width="16" height="16" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M106 202 L200 100 L294 202 Z" fill="white"/>
+                            <rect x="130" y="200" width="140" height="112" fill="white"/>
+                            <rect x="174" y="244" width="52" height="68" rx="6" fill="rgba(79,70,229,0.7)"/>
+                            <path d="M304 165 L348 165 M326 147 L348 165 L326 183" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                    </div>
                     <span style="font-size:16px;font-weight:800;color:#0F172A;">WeMove</span>
                 </a>
-                <span class="footer-copy">© 2025 WeMove. Feito com ☕ no Brasil.</span>
+                <span class="footer-copy">© 2026 WeMove · powered by <a href="#" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">LFcreativehub</a></span>
                 <a href="https://app.wemoveapp.co" class="footer-link">Acessar o app →</a>
             </div>
         </div>
